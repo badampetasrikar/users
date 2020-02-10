@@ -1,0 +1,10 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+df = pd.read_csv('D:/dunnhumby/ORIGINAL/dunnhumby/transactions_200701.csv', usecols=['SHOP_DATE', 'CUST_CODE'])
+df=df.sort_values(['CUST_CODE','SHOP_DATE'])
+df=df.reset_index(drop=True)
+df['SHOP_DATE'] = pd.to_datetime(df['SHOP_DATE'],format = '%Y%m%d')
+B=df['SHOP_DATE'].diff()
+b.to_csv('D:/dunnhumby/ORIGINAL/dunnhumby/set.csv')
+B.unique().mean()
